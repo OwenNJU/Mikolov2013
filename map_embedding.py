@@ -64,7 +64,7 @@ def main():
     dim = x.shape[1]
     x_train = np.zeros((dictsize, dim))
     z_train = np.zeros((dictsize, dim))
-    for i, line in enumrate(dictfile):
+    for i, line in enumerate(dictfile):
         if i == dictsize:
             break
         src, trg = line.strip.split(" ")
