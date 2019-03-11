@@ -23,7 +23,7 @@ def main():
     parser.add_argument('trg_output')
     parser.add_argument('seed_dict')
     parser.add_argument('--encoding', default='utf-8')
-    parser.add_argument('--precision', choices['fp16', 'fp32', 'fp64'], default='fp32')
+    parser.add_argument('--precision', choices=['fp16', 'fp32', 'fp64'], default='fp32')
     parser.add_argument('--cuda', action='store_true')
     parser.add_argument('--batch_size', default=10000, type=int)
 
