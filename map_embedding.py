@@ -75,7 +75,7 @@ def main():
     model = nn.Linear(input_size, output_size)
     input = torch.from_numpy(x_train).to(device)
     target = torch.from_numpy(z_train).to(device)
-    criterion = nn.MSELoss(size_average=False)
+    criterion = nn.MSELoss(reduction='sum')
     optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
     for i in range(num_epochs):
