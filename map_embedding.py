@@ -85,7 +85,7 @@ def main():
         # compute and print loss
         loss = criterion(output, target)
         if (epoch+1) % 5 == 0:
-            print('Epoch [{}/{}], Loss:{.4f}'.format(epoch+1, num_epochs, loss.item()))
+            print('Epoch [{}/{}], Loss:{:.4f}'.format(epoch+1, num_epochs, loss.item()))
         
         #update params
         optimizer.zero_grad()
