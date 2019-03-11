@@ -12,8 +12,8 @@ class MAP(nn.Module):
         super(MAP, self).__init__()
         self.fc = nn.Linear(input_size, output_size)
     def forward(self, x):
-        x = self.fc(x)
-        return x
+        out = self.fc(x)
+        return out
 
 def main():
     parser = ap.ArgumentParser(description='Parse argument')
