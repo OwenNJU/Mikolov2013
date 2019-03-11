@@ -94,13 +94,12 @@ def main():
     # transform embeddings x and z
     with torch.no_grad():
         xw = model(x.to(device))
-        zw = model(z.to(device))
                   
     # write mapped embeddings
     srcfile = open(args.src_output, mode='w', encoding=args.encoding, errors='surrogateescape')
     trgfile = open(args.trg_output, mode='w', encoding=args.encoding, errors='surrogateescape')
     embeddings.write(src_words, xw.numpy(), srcfile)
-    embeddings.write(trg_words, zw.numpy(), trgfile)
+    embeddings.write(trg_words, z.numpy(), trgfile)
     srcfile.close()
     trgfile.close()
                   
