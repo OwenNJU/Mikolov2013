@@ -8,9 +8,9 @@ import numpy as np
 
 
 class MAP(nn.Module):
-    def __init__(self):
+    def __init__(self, input_size, output_size):
         super(MAP, self).__init__()
-        self.nn.fc = nn.Linear(300, 300)
+        self.nn.fc = nn.Linear(input_size, output_size)
     def forward(self, x):
         x = self.nn.fc(x)
         return x
@@ -72,7 +72,7 @@ def main():
         z_train[i, :] = z[src_word2ind[src]]
 
     # get solution
-    model = nn.Linear(input_size, output_size)
+    model = MAP(input_size, output_size).to(device)
     input = torch.from_numpy(x_train).to(device)
     target = torch.from_numpy(z_train).to(device)
     criterion = nn.MSELoss(reduction='sum')
