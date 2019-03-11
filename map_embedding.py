@@ -10,9 +10,9 @@ import numpy as np
 class MAP(nn.Module):
     def __init__(self, input_size, output_size):
         super(MAP, self).__init__()
-        self.nn.fc = nn.Linear(input_size, output_size)
+        self.fc = nn.Linear(input_size, output_size)
     def forward(self, x):
-        x = self.nn.fc(x)
+        x = self.fc(x)
         return x
 
 def main():
