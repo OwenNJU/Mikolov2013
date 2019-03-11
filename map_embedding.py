@@ -73,8 +73,8 @@ def main():
 
     # get solution
     model = MAP(input_size, output_size).to(device)
-    input = torch.from_numpy(x_train).to(device)
-    target = torch.from_numpy(z_train).to(device)
+    input = torch.FloatTensor(torch.from_numpy(x_train)).to(device)
+    target = torch.FloatTensor(torch.from_numpy(z_train)).to(device)
     criterion = nn.MSELoss(reduction='sum')
     optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
