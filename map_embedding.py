@@ -94,7 +94,7 @@ def main():
                   
     # transform embeddings x and z
     with torch.no_grad():
-        xw = model(x.to(device))
+        xw = model(torch.from_numpy(x).float().to(device))
                   
     # write mapped embeddings
     srcfile = open(args.src_output, mode='w', encoding=args.encoding, errors='surrogateescape')
