@@ -54,8 +54,8 @@ def main():
 
     #hyper-parameters
     dictsize = 5000
-    learning_rate = 0.001
-    num_epochs = 100
+    learning_rate = 0.00001
+    num_epochs = 500
     input_size = 300
     output_size = 300
 
@@ -84,7 +84,7 @@ def main():
         
         # compute and print loss
         loss = criterion(output, target)
-        if (epoch+1) % 5 == 0:
+        if (epoch+1) % 10 == 0:
             print('Epoch [{}/{}], Loss:{:.4f}'.format(epoch+1, num_epochs, loss.item()))
         
         #update params
