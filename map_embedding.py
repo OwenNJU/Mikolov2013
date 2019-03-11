@@ -78,7 +78,7 @@ def main():
     criterion = nn.MSELoss(reduction='sum')
     optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
-    for i in range(num_epochs):
+    for epoch in range(num_epochs):
         #forward pass
         output = model(input)
         
