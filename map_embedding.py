@@ -67,7 +67,7 @@ def main():
     for i, line in enumerate(dictfile):
         if i == dictsize:
             break
-        src, trg = line.strip.split(" ")
+        src, trg = line.split()
         x_train[i, :] = x[src_word2ind[src]]
         z_train[i, :] = z[src_word2ind[src]]
 
