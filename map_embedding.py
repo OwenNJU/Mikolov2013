@@ -54,8 +54,8 @@ def main():
 
     #hyper-parameters
     dictsize = 5000
-    learning_rate = 0.0001
-    num_epochs = 500
+    learning_rate = 0.00001
+    num_epochs = 1000
     input_size = 300
     output_size = 300
 
@@ -84,7 +84,7 @@ def main():
         
         # compute and print loss
         loss = criterion(output, target)
-        if (epoch+1) % 10 == 0:
+        if (epoch+1) % 20 == 0:
             print('Epoch [{}/{}], Loss:{:.4f}'.format(epoch+1, num_epochs, loss.item()))
         
         #update params
@@ -100,7 +100,7 @@ def main():
     srcfile = open(args.src_output, mode='w', encoding=args.encoding, errors='surrogateescape')
     trgfile = open(args.trg_output, mode='w', encoding=args.encoding, errors='surrogateescape')
     embeddings.write(src_words, xw.cpu().numpy(), srcfile)
-    embeddings.write(trg_words, z.cpu().numpy(), trgfile)
+    embeddings.write(trg_words, z, trgfile)
     srcfile.close()
     trgfile.close()
                   
