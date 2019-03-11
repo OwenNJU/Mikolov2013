@@ -54,7 +54,7 @@ def main():
 
     #hyper-parameters
     dictsize = 5000
-    learning_rate = 0.00001
+    learning_rate = 0.00005
     num_epochs = 1000
     input_size = 300
     output_size = 300
