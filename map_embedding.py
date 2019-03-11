@@ -54,7 +54,7 @@ def main():
 
     #hyper-parameters
     dictsize = 5000
-    learning_rate = 0.00001
+    learning_rate = 0.0001
     num_epochs = 500
     input_size = 300
     output_size = 300
@@ -99,8 +99,8 @@ def main():
     # write mapped embeddings
     srcfile = open(args.src_output, mode='w', encoding=args.encoding, errors='surrogateescape')
     trgfile = open(args.trg_output, mode='w', encoding=args.encoding, errors='surrogateescape')
-    embeddings.write(src_words, xw.numpy(), srcfile)
-    embeddings.write(trg_words, z.numpy(), trgfile)
+    embeddings.write(src_words, xw.cpu().numpy(), srcfile)
+    embeddings.write(trg_words, z.cpu().numpy(), trgfile)
     srcfile.close()
     trgfile.close()
                   
