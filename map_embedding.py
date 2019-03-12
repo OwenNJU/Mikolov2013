@@ -54,8 +54,8 @@ def main():
 
     #hyper-parameters
     dictsize = 5000
-    learning_rate = 0.0001
-    num_epochs = 5000
+    learning_rate = 0.05
+    num_epochs = 10000
     input_size = 300
     output_size = 300
 
@@ -78,6 +78,7 @@ def main():
     criterion = nn.MSELoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
+    print('='*40 + 'start learning' + '='*40)
     for epoch in range(num_epochs):
         #forward pass
         output = model(input)
