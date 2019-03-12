@@ -55,7 +55,7 @@ def main():
     #hyper-parameters
     dictsize = 5000
     learning_rate = 0.00005
-    num_epochs = 1000
+    num_epochs = 5000
     input_size = 300
     output_size = 300
 
@@ -75,7 +75,7 @@ def main():
     model = MAP(input_size, output_size).to(device)
     input = torch.from_numpy(x_train).float().to(device)
     target = torch.from_numpy(z_train).float().to(device)
-    criterion = nn.MSELoss(reduction='sum')
+    criterion = nn.MSELoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
     for epoch in range(num_epochs):
@@ -84,7 +84,7 @@ def main():
         
         # compute and print loss
         loss = criterion(output, target)
-        if (epoch+1) % 20 == 0:
+        if (epoch+1) % 100 == 0:
             print('Epoch [{}/{}], Loss:{:.4f}'.format(epoch+1, num_epochs, loss.item()))
         
         #update params
