@@ -23,7 +23,7 @@ def main():
     parser.add_argument('trg_output')
     parser.add_argument('seed_dict')
     parser.add_argument('--encoding', default='utf-8')
-    parser.add_argument('--precision', choices=['fp16', 'fp32', 'fp64'], default='fp32')
+    parser.add_argument('--precision', choices=['fp16', 'fp32', 'fp64'], default='fp64')
     parser.add_argument('--cuda', action='store_true')
     parser.add_argument('--batch_size', default=10000, type=int)
 
@@ -54,7 +54,7 @@ def main():
 
     #hyper-parameters
     dictsize = 5000
-    learning_rate = 0.05
+    learning_rate = 0.001
     num_epochs = 10000
     input_size = 300
     output_size = 300
@@ -85,7 +85,7 @@ def main():
         
         # compute and print loss
         loss = criterion(output, target)
-        if (epoch+1) % 100 == 0:
+        if (epoch+1) % 1000 == 0:
             print('Epoch [{}/{}], Loss:{:.4f}'.format(epoch+1, num_epochs, loss.item()))
         
         #update params
